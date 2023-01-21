@@ -1,5 +1,5 @@
 import React from 'react';
-import BasicButton from '../atoms/BasicButton';
+import BasicButton from '../atoms/button/BasicButton';
 
 type Props <T> = {
     currentValue: T

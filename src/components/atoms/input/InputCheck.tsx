@@ -1,15 +1,9 @@
 import React from 'react';
 
-type Props<T> = {
-    id: string
-    className: string
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    value: T
-    checked: boolean
-    disabled: boolean
-    testId: string
-}
-
+type Props = React.ComponentProps<"input"> & 
+{
+    testId: string;
+} 
 
 // 使う側
 // const [checkedValues, setCheckedValues] = useState<number[]>([])
@@ -49,16 +43,14 @@ type Props<T> = {
 //     </div>
 //     );
 
-const InputCheck = <T extends string,>(props: Props<T>) => {
-    const {className, onChange, value, checked, disabled, testId} = props;
-  
+const InputCheck = (props: Props) => {
+    const {testId, ...nativeProp} = props
+
     return (
         <input
-            className={className}
+            {...nativeProp}
             type="checkbox"
-            value={value}
-            onChange={onChange}
-            checked={checked}
+            data-test-id={testId}
         />
 
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Label from '../atoms/Label';
-import TextInput from '../atoms/TextInput';
+import TextInput from '../atoms/input/TextInput';
 
 type Props<T> = {
     input: {
@@ -44,23 +44,16 @@ type Props<T> = {
 // }
 
 const TextInputField = <T extends string | number,>(props: Props<T>) => {
-  const { type, id, placeholder, onChange, value, className, maxLength, name, required } = props.input
   const { text, for: labelFor } = props.label;
 
   return (
     <>
-        <Label htmlFor={labelFor} text={text} />
-        <TextInput
-            className={className}
-            maxLength={maxLength}
-            name={name}
-            required={required}
-            value={value}
-            id={id}
-            onChange={onChange} 
-            type={type}
-            placeholder={placeholder}
-        />
+        <Label testId='2222'>
+            <TextInput
+                {...props.input}
+                testId=""
+            />
+        </Label>
     </>
   );
 }

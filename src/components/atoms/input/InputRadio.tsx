@@ -1,15 +1,9 @@
 import React from 'react';
 
-type Props<T> = {
-    id: string
-    className: string
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    value: T
-    selectedValue: T
-    disabled: boolean
-    testId: string
-}
-
+type Props = React.ComponentProps<"input"> & 
+{
+    testId: string;
+} 
 
 // 使う側
 // const items = [
@@ -36,16 +30,14 @@ type Props<T> = {
 //     );
 //   })}
 
-const InputRadio = <T extends string,>(props: Props<T>) => {
-    const {className, onChange, value, selectedValue, disabled, testId} = props;
-  
+const InputRadio = (props: Props) => {
+    const {testId, ...nativeProp} = props
+
     return (
         <input
-            className={className}
+            {...nativeProp}
             type="radio"
-            value={value}
-            onChange={onChange}
-            checked={value === selectedValue}
+            data-test-id={testId}
         />
 
     );
