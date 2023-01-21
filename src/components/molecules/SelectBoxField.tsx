@@ -61,13 +61,14 @@ const SelectBoxField = <T extends SelectOption,>(props: Props<T>) => {
 
   return (
     <>
-        <Label htmlFor={labelFor} text={text} />
-        <SelectBox
-            options={options}
-            selected={selected}
-            onChange={onChange} 
-            id={id}
-        />
+        <Label testId='gee'>
+            <SelectBox
+                options={options}
+                selected={selected}
+                onChange={onChange} 
+                id={id}
+            />
+        </Label>
     </>
   );
 }

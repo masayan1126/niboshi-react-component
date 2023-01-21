@@ -1,7 +1,7 @@
 import React from 'react';
-import BadgeRequire from '../atoms/BadgeRequire';
+import BadgeRequire from '../atoms/badge/BadgeRequire';
 import Label from '../atoms/Label';
-import TextInput from '../atoms/TextInput';
+import TextInput from '../atoms/input/TextInput';
 
 type Props<T> = {
     input: {
@@ -47,7 +47,7 @@ type Props<T> = {
 // }
 
 const CartInputField = <T extends string | number,>(props: Props<T>) => {
-  const { type, id, placeholder, onChange, value, className, maxLength, name, required } = props.input
+  const { required } = props.input
   const {withLabel} = props
   const { text, for: labelFor } = props.label;
 
@@ -56,24 +56,19 @@ const CartInputField = <T extends string | number,>(props: Props<T>) => {
         <div>
             {
                 withLabel && 
-                    <Label htmlFor={labelFor} text={text} />
+                    <Label testId='gege'>
+                        <TextInput
+                        {...props.input}
+                            testId=""
+                        />
+                    </Label>
             }
             {
                 required && 
                     <BadgeRequire />
             }
         </div>
-        <TextInput
-            className={className}
-            maxLength={maxLength}
-            name={name}
-            required={required}
-            value={value}
-            id={id}
-            onChange={onChange} 
-            type={type}
-            placeholder={placeholder}
-        />
+        
     </div>
   );
 }
