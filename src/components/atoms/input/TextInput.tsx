@@ -10,9 +10,7 @@ type Props = React.ComponentProps<"input"> &
     value="3" id="3" type="text" placeholder="" tabIndex={1} readOnly={false} onChange={() => console.log("A")}
 /> */}
 
-const TextInput = (props: Props) => {
-    const {testId, ...nativeProp} = props
-
+const TextInput = ({testId, ...nativeProp}: Props) => {
     return (
         <input 
             {...nativeProp}

@@ -10,8 +10,7 @@ type Props = React.ComponentProps<"label"> &
     testId: string;
 } 
 
-const Label = (props: Props) => {
-    const {testId, ...nativeProp} = props
+const Label = ({testId, ...nativeProp}: Props) => {
 
   return (
     <label 

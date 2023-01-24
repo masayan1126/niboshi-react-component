@@ -30,8 +30,7 @@ type Props = React.ComponentProps<"input"> &
 //     );
 //   })}
 
-const InputRadio = (props: Props) => {
-    const {testId, ...nativeProp} = props
+const InputRadio = ({testId, ...nativeProp}: Props) => {
 
     return (
         <input

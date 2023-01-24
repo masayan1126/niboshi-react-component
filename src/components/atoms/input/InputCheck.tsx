@@ -43,8 +43,7 @@ type Props = React.ComponentProps<"input"> &
 //     </div>
 //     );
 
-const InputCheck = (props: Props) => {
-    const {testId, ...nativeProp} = props
+const InputCheck = ({testId, ...nativeProp}: Props) => {
 
     return (
         <input

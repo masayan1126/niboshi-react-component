@@ -5,8 +5,7 @@ type Props = React.ComponentProps<"button"> &
     testId: string;
 } 
 
-const Button = (props: Props) => {
-  const {testId, ...nativeProp} = props
+const Button = ({testId, ...nativeProp}: Props) => {
 
   return (
     <button
