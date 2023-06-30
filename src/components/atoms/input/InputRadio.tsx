@@ -30,8 +30,7 @@ type Props = React.ComponentProps<"input"> &
 //     );
 //   })}
 
-const InputRadio = (props: Props) => {
-    const {testId, ...nativeProp} = props
+const InputRadio = React.memo(({testId, ...nativeProp}: Props) => {
 
     return (
         <input
@@ -41,6 +40,6 @@ const InputRadio = (props: Props) => {
         />
 
     );
-}
+})
 
 export default InputRadio;

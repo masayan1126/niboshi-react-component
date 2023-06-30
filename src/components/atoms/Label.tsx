@@ -1,3 +1,5 @@
+import React from "react";
+
 {/* <Label testId='' htmlFor='ge'>
     <TextInput 
         className='' maxLength={50} name="a" testId={'ddd'} required={true} 
@@ -5,21 +7,17 @@
     />
 </Label> */}
 
-type Props = React.ComponentProps<"label"> & 
-{
-    testId: string;
-} 
+type Props = React.ComponentProps<"label">
 
-const Label = (props: Props) => {
-    const {testId, ...nativeProp} = props
+const Label = React.memo(({...nativeProp}: Props) => {
+  
 
   return (
     <label 
         {...nativeProp}
-        data-test-id={testId} 
     >
     </label>
   );
-}
+})
 
 export default Label;

@@ -56,7 +56,7 @@ const CartInputField = <T extends string | number,>(props: Props<T>) => {
         <div>
             {
                 withLabel && 
-                    <Label testId='gege'>
+                    <Label>
                         <TextInput
                         {...props.input}
                             testId=""
