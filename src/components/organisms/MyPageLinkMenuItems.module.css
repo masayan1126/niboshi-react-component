@@ -1,0 +1,8 @@
+.ul {
+    text-align: left;
+}
+
+.li {
+    display:flex;
+    justify-content:space-between;
+}

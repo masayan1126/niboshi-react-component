@@ -1,4 +1,4 @@
-import PageBackButton from "../atoms/button/PageBackButton";
+import PageBackButton from "../atoms/button/_PageBackButton";
 import Header from "./Header";
 
 function MyPageHeader() {

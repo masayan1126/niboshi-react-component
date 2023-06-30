@@ -10,26 +10,6 @@ type Props <T> = {
     testId: string
 }
 
-// const [ageStack, setAgeStack] = useState<number[]>([])
-
-//     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-//         const stack = new StackConcreate([...ageStack])
-//         stack.push(Number(e.currentTarget.textContent))
-//         setAgeStack(stack.all())
-//     }
-
-//     const handleClear = () => {
-//         const stack = new StackConcreate([...ageStack])
-//         stack.pop()
-//         setAgeStack(stack.all())
-//     }
-
-//     return (
-//     <div className="App">
-//         <Calculator className={''} onClick={handleClick} testId={''} onDelete={handleClear} currentValue={ageStack.join("")} unit={'歳'} />
-//     </div>
-//     );
-
 const Calculator = <T,>(props: Props<T>) => {
   const {currentValue, unit, className, onClick, testId, onDelete } = props;
 

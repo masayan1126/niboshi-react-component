@@ -43,7 +43,7 @@ type Props = React.ComponentProps<"input"> &
 //     </div>
 //     );
 
-const InputCheck = ({testId, ...nativeProp}: Props) => {
+const InputCheck = React.memo(({testId, ...nativeProp}: Props) => {
 
     return (
         <input
@@ -53,6 +53,6 @@ const InputCheck = ({testId, ...nativeProp}: Props) => {
         />
 
     );
-}
+})
 
 export default InputCheck;

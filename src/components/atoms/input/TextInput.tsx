@@ -10,13 +10,13 @@ type Props = React.ComponentProps<"input"> &
     value="3" id="3" type="text" placeholder="" tabIndex={1} readOnly={false} onChange={() => console.log("A")}
 /> */}
 
-const TextInput = ({testId, ...nativeProp}: Props) => {
+const TextInput = React.memo(({testId, ...nativeProp}: Props) => {
     return (
         <input 
             {...nativeProp}
             data-test-id={testId}
         />
     );
-}
+})
 
 export default TextInput;

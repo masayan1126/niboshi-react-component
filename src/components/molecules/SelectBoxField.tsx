@@ -61,12 +61,12 @@ const SelectBoxField = <T extends SelectOption,>(props: Props<T>) => {
 
   return (
     <>
-        <Label testId='gee'>
+        <Label>
             <SelectBox
                 options={options}
                 selected={selected}
-                onChange={onChange} 
-                id={id}
+                onChange={onChange}
+                id={id} testId={''}
             />
         </Label>
     </>
